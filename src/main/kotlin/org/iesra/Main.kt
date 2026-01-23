@@ -42,7 +42,7 @@ fun main() {
     println("\nEjercicio 4.8")
     println("--------------------------------")
 
-    fun main() {
+
 
         val conjunto = ConjuntoLibros(5)
 
@@ -69,7 +69,7 @@ fun main() {
 
 
         conjunto.mostrarTodo()
-    }
+
 
 
 
@@ -78,6 +78,57 @@ fun main() {
     println("--------------------------------")
 
 
+    val lista = ListaTareas()
+    var opcion: Int
+
+    do {
+        println(
+            """
+        ---- MENÚ ----
+        1. Agregar tarea
+        2. Eliminar tarea
+        3. Marcar tarea como realizada
+        4. Mostrar todas las tareas
+        5. Mostrar tareas pendientes
+        6. Mostrar tareas realizadas
+        0. Salir
+        ----------------
+    """
+        )
+
+        opcion = readLine()!!.toInt()
+
+        when (opcion) {
+            1 -> {
+                print("Descripción: ")
+                val desc = readLine()!!
+                lista.agregarTarea(desc)
+            }
+
+            2 -> {
+                print("ID de la tarea a eliminar: ")
+                val id = readLine()!!.toInt()
+                if (!lista.eliminarTarea(id)) {
+                    println("Tarea no encontrada")
+                }
+            }
+
+            3 -> {
+                print("ID de la tarea a marcar como realizada: ")
+                val id = readLine()!!.toInt()
+                if (!lista.marcarTareaRealizada(id)) {
+                    println("Tarea no encontrada")
+                }
+            }
+
+            4 -> lista.mostrarTodas()
+            5 -> lista.mostrarPendientes()
+            6 -> lista.mostrarRealizadas()
+            0 -> println("Saliendo...")
+            else -> println("Opción incorrecta")
+        }
+
+        } while (opcion != 0)
 
 
 
