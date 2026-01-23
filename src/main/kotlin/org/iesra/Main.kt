@@ -42,6 +42,41 @@ fun main() {
     println("\nEjercicio 4.8")
     println("--------------------------------")
 
+    fun main() {
+
+        val conjunto = ConjuntoLibros(5)
+
+        val libro1 = Libro("Mein Kampf", "Adolf Hitler", 345, 10)
+        val libro2 = Libro("El Quijote", "Cervantes", 678, 9)
+
+        conjunto.anadirLibro(libro1)
+        conjunto.anadirLibro(libro2)
+
+        conjunto.mostrarTodo()
+
+
+        conjunto.eliminarPorTitulo("Mein Kampf")
+
+
+        conjunto.eliminarPorAutor("Cervantes")
+
+
+        conjunto.mostrarTodo()
+
+
+        val libro3 = Libro("Hijos de la revolucion", "Antonio Guillermo Yuste", 567, 8)
+        conjunto.anadirLibro(libro3)
+
+
+        conjunto.mostrarTodo()
+    }
+
+
+
+
+    println("\nEjercicio 4.9")
+    println("--------------------------------")
+
 
 
 
